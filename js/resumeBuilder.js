@@ -9,7 +9,7 @@ var bio = {
     "location": "Redwood City, California",
      },
     "skills" : ["HTML, CSS, Javascript","Video Production, Editing and Color Correction", "Audio Editing & Restoration"],
-    "picture" : "images/fry.jpg",
+    "picture" : "images/si.jpg",
     "welcomeMsg" : "I code = therefore (I am)"
 };
 
