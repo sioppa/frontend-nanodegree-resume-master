@@ -122,21 +122,75 @@ education.display = function() {
 };
 education.display();
 
-function display() {
-    for (job in work.jobs){
-        $("workExperience").append)HTMLworkStart);
+var work = {
+    "jobs" : [
+        {
+        "employer" : "Freelance",
+        "title" : "Video Editor",
+        "location" : "Los Angeles & Redwood City, California",
+        "dates" : "2009 - Now",
+        "website" : "http://vimeo.com/silee/demoreel/",
+        "description" : "Write and Produced promo videos for clients and small businesses."
+    },
+    {
+        "employer" : "LA CITYVIEW 35 (City of Los Angeles)",
+        "title" : "Contract Video Editor",
+        "location" : "Los Angeles, California",
+        "dates" : "2008",
+        "website" : "http://www.lacityview.org/",
+        "description" : "Edited segments for a television weekly magazine show, LA This Week."
+    },
+    {
+        "employer" : "Red Hering",
+        "title" : "Video Editor & Audio Engineer",
+        "location" : "Belmont, California",
+        "dates" : "2007-2008",
+        "website" : "http://www.redherring.com/",
+        "description" : "Conducted multi-camera interview shootings in location and in RH green screen studio. Restored, edited and compressed audio sources for video."
+    },
+    {
+        "employer" : "Grace Ministries International",
+        "title" : "Video Editor",
+        "location" : "Fullerton, California",
+        "dates" : " 2003-2004",
+        "website" : "http://www.gracemi.com/",
+        "description" : "Edited video, and recorded and mixed audio for Sunday paid sermon program and documentaries."
+    },
+    {
+        "employer" : "Gospel Broadcasting Company (AM 1190)",
+        "title" : "Audio Engineer",
+        "location" : "Los Angeles, California",
+        "dates" : " 2003-2004",
+        "website" : "http://www.igbc.net/",
+        "description" : "Controlled mixing console and audio processor for live show."
+    },
+    {
+        "employer" : "MBC America",
+        "title" : "Freelance Promo Editor",
+        "location" : "Los Angeles, California",
+        "dates" : "2002",
+        "website" : "http://www.mbc-america.com/",
+        "description" : "Produced and edited MBC America promo for cable networks."
+    }
+  ]
+};
+work.display = function() {
+  for (job in work.jobs) {
+    $("#workExperience").append(HTMLworkStart);
+    var formattedEmployer = HTMLworkEmployer.replace("%data%",work.jobs[job].employer);
+    var formattedEmployer = formattedEmployer.replace("#", work.jobs[job].website);
+    var formattedTitle = HTMLworkTitle.replace("%data%",work.jobs[job].title)
+    var formattedLocation = HTMLworkLocation.replace("%data%",work.jobs[job].location);
+    var formattedEmployerTitle = formattedEmployer + formattedTitle + formattedLocation;
+    var formattedDates = HTMLworkDates.replace("%data%",work.jobs[job].dates);
+    var formattedDescription = HTMLworkDescription.replace("%data%",work.jobs[job].description);
 
-        var formattedEmployer = HTMLworkEmployer.replace
-            ("%data%", work.jobs[job].employer);
-        var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
-        var formattedEmployerTitle = formattedEmployer + formattedTitle;
+    $(".work-entry:last").append(formattedEmployerTitle);
+    $(".work-entry:last").append(formattedDates);
 
-        $(".work-entry:last").append(formattedEmployerTitle);
-
-        var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
-
-        var formattedDescription = HTMLworkDescription.replace("%data%",work[job].description);
-        $(".work-entry:last").append(formattedDescription);
-        }
+    $(".work-entry:last").append(formattedDescription);
+  }
 }
+
 work.display();
+
